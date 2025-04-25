@@ -14,12 +14,7 @@ pipeline {
                 sh 'rm -rf spring-boot-app/target/'
             }
         }
-        stage('Checkout Code') {
-            steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']],
-                          userRemoteConfigs: [[url: 'https://ImVivek7/symmetrical-journey']]])
-            }
-        }
+        
   stage('Modify Permissions') {
             steps {
                 sh 'chmod -R g+w spring-boot-app/target'
