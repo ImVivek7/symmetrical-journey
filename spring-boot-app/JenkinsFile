@@ -8,7 +8,13 @@ pipeline {
 
 
     stages {
-        
+
+  stage('Verify Java Version') {
+            steps {
+                sh 'java -version'
+                sh 'mvn -v'  // Check Maven version and Java it is using
+            }
+        }
         
   stage('Modify Permissions') {
             steps {
