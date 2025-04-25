@@ -9,11 +9,14 @@ pipeline {
 
     stages {
 
-tools {
-        jdk 'jdk-17'  // This must match the name you provided in Global Tool Configuration
-    }
+
 
   stage('Verify Java Version') {
+            steps {
+                tools {
+                    jdk 'jdk-17'  // Ensure this matches the name you provided in Global Tool Configuration
+                }
+            }
             steps {
                 sh 'java -version'
                 sh 'mvn -v'  // Check Maven version and Java it is using
