@@ -10,9 +10,10 @@ pipeline {
         
   stage('Modify Permissions') {
             steps {
-               
-      rm -rf spring-boot-app/target/
+    sh '''
+                rm -rf spring-boot-app/target/
                 chmod -R g+w spring-boot-app/target/
+                '''
             }
         }
     stage('Checkout') {
