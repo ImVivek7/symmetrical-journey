@@ -5,17 +5,10 @@ pipeline {
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
     }
   }
-
-
-    stages {
-
-stage('Verify Java Install') {
-            steps {
-                tools {
+tools {
                     jdk 'jdk-17'  // Ensure this matches the name you provided in Global Tool Configuration
                 }
-}
-}
+
 
   stage('Verify Java Version') {
             steps {
