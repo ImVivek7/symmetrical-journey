@@ -7,13 +7,6 @@ pipeline {
   }
     stages {
         
-    stage('Workspace Cleanup') {
-            steps {
-                cleanWs() // Cleans the entire workspace
-                // Or manual cleanup
-                sh 'rm -rf spring-boot-app/target/'
-            }
-        }
         
   stage('Modify Permissions') {
             steps {
