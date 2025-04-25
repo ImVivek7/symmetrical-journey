@@ -10,7 +10,7 @@ pipeline {
         
   stage('Modify Permissions') {
             steps {
-                sh 'chmod -R g+w spring-boot-app/target'
+                sh 'chmod 777 spring-boot-app/target'
             }
         }
     stage('Checkout') {
