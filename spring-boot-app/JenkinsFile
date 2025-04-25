@@ -5,6 +5,11 @@ pipeline {
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
     }
   }
+
+tools {
+        jdk 'jdk-17' // This name must match exactly how it's defined in Jenkins "Global Tool Configuration"
+        maven 'maven-3.10.1' // Or your Maven version
+    }
     stages {
         
         
@@ -27,6 +32,7 @@ pipeline {
       steps {
         sh 'ls -ltr'
         // build the project and create a JAR file
+        
         sh 'cd spring-boot-app && mvn clean compile && mvn clean package'
       }
     }
