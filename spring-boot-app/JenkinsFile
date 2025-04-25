@@ -9,7 +9,13 @@ pipeline {
 
     stages {
 
-
+stage('Verify Java Install') {
+            steps {
+                tools {
+                    jdk 'jdk-17'  // Ensure this matches the name you provided in Global Tool Configuration
+                }
+}
+}
 
   stage('Verify Java Version') {
             steps {
