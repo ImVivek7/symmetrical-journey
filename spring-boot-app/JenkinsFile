@@ -6,9 +6,18 @@ pipeline {
     }
   }
     stages {
-        stage('Clean Workspace') {
+        
+    stage('Workspace Cleanup') {
             steps {
-                cleanWs()
+                cleanWs() // Cleans the entire workspace
+                // Or manual cleanup
+                sh 'rm -rf spring-boot-app/target/'
+            }
+        }
+        stage('Checkout Code') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']],
+                          userRemoteConfigs: [[url: 'https://ImVivek7/symmetrical-journey']]])
             }
         }
     stage('Checkout') {
