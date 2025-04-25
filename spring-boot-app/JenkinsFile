@@ -10,9 +10,10 @@ pipeline {
         
   stage('Modify Permissions') {
             steps {
-    sh '''
-                rm -rf spring-boot-app/target/
-                chmod -R g+w spring-boot-app/target/
+    echo 'Fixing permissions...'
+                sh '''
+                chmod -R u+w spring-boot-app/target
+                chmod -R g+w spring-boot-app/target
                 '''
             }
         }
