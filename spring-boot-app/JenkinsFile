@@ -20,6 +20,11 @@ pipeline {
                           userRemoteConfigs: [[url: 'https://ImVivek7/symmetrical-journey']]])
             }
         }
+  stage('Modify Permissions') {
+            steps {
+                sh 'chmod -R g+w spring-boot-app/target'
+            }
+        }
     stage('Checkout') {
       steps {
         sh 'echo passed'
