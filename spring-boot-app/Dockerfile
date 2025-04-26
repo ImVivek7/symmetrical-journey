@@ -2,6 +2,8 @@
 # But make sure to use the correct version of Java
 FROM openjdk:17-jdk-slim
 
+ENV JAVA_HOME=/usr/local/openjdk-17
+ENV PATH=$JAVA_HOME/bin:$PATH
 
 # Simply the artifact path
 ARG artifact=target/spring-boot-web.jar
@@ -12,3 +14,4 @@ COPY ${artifact} app.jar
 
 # This should not be changed
 ENTRYPOINT ["java","-jar","app.jar"]
+
