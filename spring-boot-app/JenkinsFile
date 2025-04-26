@@ -15,6 +15,13 @@ environment {
     //            }
 
 stages {
+
+stage('Check Java') {
+      steps {
+        sh 'echo JAVA_HOME is $JAVA_HOME'
+        sh 'java -version'
+}
+}
   stage('Verify Java Version') {
             
             steps {
@@ -23,6 +30,7 @@ stages {
                 sh 'mvn -v'  // Check Maven version and Java it is using
             }
         }
+
         
 //  stage('Modify Permissions') {
   //          steps {
