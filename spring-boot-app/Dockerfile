@@ -3,8 +3,8 @@
 FROM openjdk:17-jdk-slim
 
 
-JAVA_HOME = "/usr/lib/jvm/java-17-openjdk-amd64"
-PATH = "/usr/lib/jvm/java-17-openjdk-amd64/bin:$PATH"
+ENV JAVA_HOME = "/usr/lib/jvm/java-17-openjdk-amd64"
+ENV PATH = "/usr/lib/jvm/java-17-openjdk-amd64/bin:$PATH"
 
 
 # Simply the artifact path
