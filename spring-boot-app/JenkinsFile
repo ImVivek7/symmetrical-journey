@@ -94,6 +94,13 @@ stage('Checkout') {
             }
         }
     }
+stages {
+        stage('Cleanup Workspace') {
+            steps {
+                cleanWs()
+            }
+        }
+    }
   }
 }
 
