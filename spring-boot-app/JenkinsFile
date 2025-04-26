@@ -14,6 +14,7 @@ stages {
             
             steps {
                 sh 'java -version'
+                sh 'javac -version'
                 sh 'mvn -v'  // Check Maven version and Java it is using
             }
         }
