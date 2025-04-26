@@ -3,8 +3,8 @@
 FROM openjdk:17-jdk-slim
 
 
-ENV JAVA_HOME =/usr/local/openjdk-17
-ENV PATH ="$JAVA_HOME/bin:$PATH"
+ENV JAVA_HOME /usr/local/openjdk-17
+ENV PATH "$JAVA_HOME/bin:$PATH"
 
 
 
