@@ -2,8 +2,9 @@
 # But make sure to use the correct version of Java
 FROM openjdk:17-jdk-slim
 
-ENV JAVA_HOME='/usr/lib/jvm/java-17-openjdk-amd64'
-ENV PATH="${JAVA_HOME}/bin:${env.PATH}"
+
+JAVA_HOME = "/usr/lib/jvm/java-17-openjdk-amd64"
+PATH = "/usr/lib/jvm/java-17-openjdk-amd64/bin:$PATH"
 
 
 # Simply the artifact path
