@@ -3,12 +3,11 @@ pipeline {
     docker {
       image 'abhishekf5/maven-abhishek-docker-agent:v1'
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
-      envVars = [
-                "JAVA_HOME": "/usr/lib/jvm/java-17-openjdk-amd64",
-                "PATH": "/usr/lib/jvm/java-17-openjdk-amd64/bin:${env.PATH}"
-            ]
+
+}
+    
     }
-  }
+  
 environment {
         JAVA_HOME = '/usr/lib/jvm/java-17-openjdk-amd64'
         PATH = "${JAVA_HOME}/bin:${env.PATH}"
