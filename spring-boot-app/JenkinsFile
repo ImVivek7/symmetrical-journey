@@ -20,6 +20,7 @@ stages {
       steps {
         sh 'echo JAVA_HOME is $JAVA_HOME'
         sh 'java -version'
+        sh 'javac -version'
         sh 'mvn -v'
       }
     }
