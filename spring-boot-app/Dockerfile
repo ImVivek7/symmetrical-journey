@@ -3,17 +3,21 @@
 FROM openjdk:17-jdk-slim
 
 
-ENV JAVA_HOME = "/usr/lib/jvm/java-17-openjdk-amd64"
-ENV PATH = "/usr/lib/jvm/java-17-openjdk-amd64/bin:$PATH"
+ENV JAVA_HOME =/usr/local/openjdk-17
+ENV PATH ="$JAVA_HOME/bin:$PATH"
 
 
-# Simply the artifact path
-ARG artifact=target/spring-boot-web.jar
 
 WORKDIR /opt/app
 
-COPY ${artifact} app.jar
+COPY target/spring-boot-web.jar app.jar
 
 # This should not be changed
 ENTRYPOINT ["java","-jar","app.jar"]
+
+
+
+
+
+
 
